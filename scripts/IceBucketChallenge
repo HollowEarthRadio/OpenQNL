@@ -1,0 +1,96 @@
+@summon 'Universal Free Realms Standard Protocols'
+@summon 'OpenQNL' 
+
+module ECLabs_2fd4e1c67a2d28fced849ee1bb76e7391b93eb12 {
+  target: SPARKLE_PONY_DETECTION_GRID, 
+  geocode: [ADDRESS::COUNTRY::IRAQ, ADDRESS::CITY::TIKRIT] as @playa,
+  options: { 
+    SPARKLEPONY_DETECTION_GRID,
+    WEATHER_MODIFICATION_SUITE,
+    USPS::ERROR_CHAIN::HAIL_SLEET_SNOW, 
+    WEATHER_MODIFICATION_LIB::CLOUD_SEED, # See: http://www.weathermodification.com/cloud-seeding.php
+    MORGELLON_DEFENSIVE_INTERFACE
+  }
+}
+
+class IceBucketChallenge includes ECLabs_2fd4e1c67a2d28fced849ee1bb76e7391b93eb12 {
+  #@playa = ADDRESS::BLACK_ROCK_DESERT
+  
+  define method challenge()
+    while @playa.is_dry? & parent.company.in_legal_contention? 
+      ice_bucket_challenge(@playa)
+    end
+  end
+  
+  private
+  
+  define method ice_bucket_challenge()
+    drop_freezing_rain_on(@playa)
+    do_emotion(CONSTANTS::LAUGH as CODE.CHANT( 
+      {
+        "Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+         Ha
+      
+      ))
+    
+  end
+}
+    
