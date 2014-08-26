@@ -1,96 +1,141 @@
 @summon 'Universal Free Realms Standard Protocols'
-@summon 'OpenQNL' 
+@summon 'OpenQNL'
 
 module ECLabs_2fd4e1c67a2d28fced849ee1bb76e7391b93eb12 {
-  target: SPARKLE_PONY_DETECTION_GRID, 
-  geocode: [ADDRESS::COUNTRY::IRAQ, ADDRESS::CITY::TIKRIT] as @playa,
-  options: { 
-    SPARKLEPONY_DETECTION_GRID,
-    WEATHER_MODIFICATION_SUITE,
-    USPS::ERROR_CHAIN::HAIL_SLEET_SNOW, 
-    WEATHER_MODIFICATION_LIB::CLOUD_SEED, # See: http://www.weathermodification.com/cloud-seeding.php
-    MORGELLON_DEFENSIVE_INTERFACE
+  @options = {
+    company: EC_CONSTANTS::EARLY_CLUES_LLC,
+    geocode: [ADDRESS::CITY::TIKRIT] as @playa,
+    includes: {
+      SPARKLEPONY_DETECTION_GRID,
+      USPS::WEATHER_WARNING::HAIL_SLEET_SNOW,
+      WEATHER_MODIFICATION::CLOUD_SEEDING, # SEE: http://www.weathermodification.com/cloud-seeding.php
+      MORGELLONS_DEFENSE_ALGORITHM
+    }
   }
 }
 
-class IceBucketChallenge includes ECLabs_2fd4e1c67a2d28fced849ee1bb76e7391b93eb12 {
-  #@playa = ADDRESS::BLACK_ROCK_DESERT
-  
-  define method challenge()
-    while @playa.is_dry? & parent.company.in_legal_contention? 
-      ice_bucket_challenge(@playa)
+object IceBucketChallenge includes ECLabs_2fd4e1c67a2d28fced849ee1bb76e7391b93eb12 {
+  # @playa = ADDRESS::CITY::BLACK_ROCK_DESERT
+
+  define method initialize(chant) {
+    UFR_CHALLENGE_QUEUE(self)
+    @chant = chant
+  }
+
+  define method challenge() {
+    while @playa.is_dry? && @company.in_legal_trouble?
+      ice_bucket_challenge()
     end
-  end
-  
+  }
+
   private
-  
-  define method ice_bucket_challenge()
-    drop_freezing_rain_on(@playa)
-    do_emotion(CONSTANTS::LAUGH as CODE.CHANT( 
-      {
-        "Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-         Ha
-      
-      ))
-    
-  end
+
+  define method ice_bucket_challenge() {
+    while (CodeChant(@chant) || until !@company.in_legal_trouble?)
+     weather_modification(@playa, with: @options)
+    end
+  }
 }
-    
+
+IBC_CHANT = %w{
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+  ha
+}
+
+ibc = IceBucketChallenge.new(IBC_CHANT)
+ibc.challenge()
+
