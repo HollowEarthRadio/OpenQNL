@@ -19,7 +19,7 @@ object Sauerkraut includes TimeTravel {
             establishes a non-binding End User License Agreement between 'consumer'
             AKA (\"You\") & 'consumed' AKA (\"OlyKraut OpenQNL Scripted Sauerkraut\").
 
-            Instructions: Consumer should injest shortly before an extended period of deep rest.
+            Instructions: Consumer should ingest shortly before an extended period of deep rest.
             Before succumbing to sleep, consumer should wait for callback message
             from mircobiome and respond using the OpenQNL protocol.
 
