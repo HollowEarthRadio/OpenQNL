@@ -1,0 +1,62 @@
+summon 'universal_free_realm/standard_protocols'
+summon "openQNL"
+summon "microbiota"
+summon 'time_travel'
+
+object Sauerkraut includes TimeTravel {
+
+  FERMENTING_STATE = 1
+  HUMAN_MICROBIOME_STATE = 2
+  UNKNOWN_STATE = 3
+
+  method fermenting? {
+    self.status == FERMENTING_STATE;
+  }
+
+  method injested_and_living_in_human_microbiome? {
+    self.status == HUMAN_MICROBIOME_STATE;
+  }
+
+  method setup_qnl_language_bridge() {
+    if fermenting? {
+      send_cold_call_message(
+        ping: {
+            "This message hereby certifies this jar to be in full compliance
+            with the Universal Free Realm Standard Protocols and suitable for
+            both human consumption as well as rudimentary time travel. This document
+            establishes a non-binding End User License Agreement between 'consumer'
+            p/k/a (\"You\") & 'consumed' p/k/a (\"OlyKraut OpenQNL Scripted Sauerkraut\").
+
+            Instructions: Consumer should injest shortly before an extended period of deep rest.
+            Before succumbing to sleep, consumer should wait for callback message
+            from mircobiome and respond using the OpenQNL protocol.
+
+            In verbose mode, the desired time travel payload should be formatted thusly.
+
+            { datetime: <timestamp>, geolocation: <geocode> }
+
+            Note: Non-linear movements through time will typically experienced during REM sleep.
+            Mileage may vary. Please contact Tech Support if you experience disruptions
+            in your service.
+
+            TOLLFREE (206) 588-KHER"
+        }
+      );
+    }
+    elsif injested_and_living_in_human_microbiome? {
+      open_neural_interface();
+    }
+    elsif unknown_state? {
+      close_connections();
+    }
+  }
+}
+
+object TimeTravel {
+  method accept_incoming_vision(vision) {
+    print_to_memory_disk(vision);
+    recall(UniversalFreeRealm::StandardProtocols::ON_WAKE);
+  }
+}
+
+TimeTravelSauerkraut.initialize().setup_qnl_language_bridge();
