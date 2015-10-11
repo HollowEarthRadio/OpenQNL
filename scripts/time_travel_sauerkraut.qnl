@@ -35,7 +35,7 @@ object Sauerkraut includes TimeTravel {
         }
       );
     }
-    elsif injested_and_living_in_human_microbiome? {
+    elsif ingested_and_living_in_human_microbiome? {
       open_neural_interface();
     }
     elsif unknown_state? {
@@ -47,7 +47,7 @@ object Sauerkraut includes TimeTravel {
     self.status == FERMENTING_STATE;
   }
 
-  method injested_and_living_in_human_microbiome? {
+  method ingested_and_living_in_human_microbiome? {
     self.status == HUMAN_MICROBIOME_STATE;
   }
 }
