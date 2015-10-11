@@ -9,14 +9,6 @@ object Sauerkraut includes TimeTravel {
   HUMAN_MICROBIOME_STATE = 2
   UNKNOWN_STATE = 3
 
-  method fermenting? {
-    self.status == FERMENTING_STATE;
-  }
-
-  method injested_and_living_in_human_microbiome? {
-    self.status == HUMAN_MICROBIOME_STATE;
-  }
-
   method setup_qnl_language_bridge() {
     if fermenting? {
       send_cold_call_message(
@@ -33,9 +25,9 @@ object Sauerkraut includes TimeTravel {
 
             In verbose mode, the desired time travel payload should be formatted thusly.
 
-            { datetime: <timestamp>, geolocation: <geocode> }
+            `{ datetime: <timestamp>, geolocation: <geocode> }`
 
-            Note: Non-linear movements through time will typically experienced during REM sleep.
+            Note: Non-linear movements through time are typically experienced during REM sleep.
             Mileage may vary. Please contact Tech Support if you experience disruptions
             in your service.
 
@@ -49,6 +41,14 @@ object Sauerkraut includes TimeTravel {
     elsif unknown_state? {
       close_connections();
     }
+  }
+  
+  method fermenting? {
+    self.status == FERMENTING_STATE;
+  }
+
+  method injested_and_living_in_human_microbiome? {
+    self.status == HUMAN_MICROBIOME_STATE;
   }
 }
 
