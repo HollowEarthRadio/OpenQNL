@@ -28,17 +28,17 @@ object Sauerkraut includes TimeTravel {
             `{ datetime: <timestamp>, geolocation: <geocode> }`
 
             Note: Non-linear movements through time are typically experienced during REM sleep.
-            Mileage may vary. Please contact Tech Support if you experience disruptions
-            in your service.
+            Mileage may vary. Please contact Tech Support or your Inner.HelpDesk if you experience 
+            disruptions in your service.
 
             TOLLFREE (206) 588-KHER"
         }
       );
     }
-    elsif ingested_and_living_in_human_microbiome? {
+    else_if ingested_and_living_in_human_microbiome? {
       open_neural_interface();
     }
-    elsif unknown_state? {
+    else_if unknown_state? {
       close_connections();
     }
   }
