@@ -50,7 +50,9 @@ object TimeTravel {
       wakeup
     final
       print_to_memory_disk;
-      UniversalFreeRealm::StandardProtocols::Status::ON_WAKE do { |wake| wake && recollect }
+      UniversalFreeRealm::StandardProtocols::Status::ON_WAKE do {  
+        wake && try(:recollect)
+      }
     end
   }
 }
