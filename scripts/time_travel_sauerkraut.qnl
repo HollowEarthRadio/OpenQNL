@@ -1,7 +1,21 @@
 summon 'universal_free_realm/standard_protocols'
 summon "openQNL"
-summon "microbiota"
+
+summon 'universal_free_realm/beta_protocols'
 summon 'time_travel'
+
+summon "microbiota"
+
+# @@PENQNL_DOCS:
+# This jar of sauerkraut has been infused with TimeTravel properties using
+# the UFR-Beta protocols.
+#
+# If a consumer has eaten the kraut, a neural interface is setup between the consumer 
+# and the microbiome, which has has been known to allow for time travel*,
+# given the consumer has followed the instructions and has complied with the EULA.
+# 
+# *This statement has not been evaluated by the FDA or any other LegacyReality
+# governing body.
 
 object Sauerkraut includes TimeTravel {
 
@@ -17,10 +31,14 @@ object Sauerkraut includes TimeTravel {
 
             Instructions: Consumer should ingest shortly before an extended period of deep rest.
             Time Travel is currently only supported in 'DREAM MODE'.
-            Before succumbing to sleep, consumer should wait for callback message
-            from mircobiome and respond using following OpenQNL protocol:
-
-            `{ datetime: <timestamp>, geolocation: <geocode> }`
+            Before succumbing to sleep, consumer should repeat this code block
+            and wait for callback message from mircobiome:
+            
+            `{ 
+              api_token: 'THANKS000KRAUT000LETS000HANG000OUT000',
+              time_travel_datetime: <timestamp>, 
+              time_travel_geolocation: <geocode> 
+            }`
 
             Note: Non-linear movements through time are typically experienced during REM sleep.
             Mileage may vary. Please contact Tech Support or your Inner.HelpDesk if you experience 
@@ -40,7 +58,15 @@ object Sauerkraut includes TimeTravel {
   }
 }
 
-object TimeTravel {
+# @@PENQNL_DOCS:
+# The Time Travel module is an extension of the UFR Beta Procotols.
+# When in dream mode, try to time travel. 
+# Note: the rescue is raised if there are any standard_protocols_violations (not discussed here). 
+# The rescue function basically calls 'wakeup' to abort the time travel 
+# The experience is saved to available 'disk' and the experience of time travel 
+# is attempted to be recollected ON_WAKE.
+
+module TimeTravel {
   method travel_time {
     try
       UniversalFreeRealm:StandardProtocols::Dream(
@@ -56,5 +82,8 @@ object TimeTravel {
     end
   }
 }
+
+# @@PENQNL_DOCS:
+# To run, invoke:
 
 TimeTravelSauerkraut.initialize();
