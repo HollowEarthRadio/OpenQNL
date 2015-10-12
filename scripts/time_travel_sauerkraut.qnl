@@ -30,7 +30,6 @@ object Sauerkraut includes TimeTravel {
             AKA (\"You\") & 'consumed' AKA (\"OlyKraut OpenQNL Scripted Sauerkraut\").
 
             Instructions: Consumer should ingest shortly before an extended period of deep rest.
-            Time Travel is currently only supported in 'DREAM MODE'.
             Before succumbing to sleep, consumer should repeat this code block
             and wait for callback message from mircobiome:
             
@@ -59,12 +58,13 @@ object Sauerkraut includes TimeTravel {
 }
 
 # @@PENQNL_DOCS:
-# The Time Travel module is an extension of the UFR Beta Procotols.
-# When in dream mode, try to time travel. 
-# Note: the rescue is raised if there are any standard_protocols_violations (not discussed here). 
-# The rescue function basically calls 'wakeup' to abort the time travel 
-# The experience is saved to available 'disk' and the experience of time travel 
-# is attempted to be recollected ON_WAKE.
+# The TimeTravel module is an extension of the UFR Beta Procotols.
+# Time travel is currently only supported in 'DREAM MODE'.
+#
+# Note: rescue block is invoked if there any standard_protocols_violations are raised (not discussed here). 
+# The rescue function will call 'wakeup' to abort the time travel.
+# The experience is saved to available 'disk' and an attempt at recollection
+# of the of the time travel experience will be done ON_WAKE
 
 module TimeTravel {
   method travel_time {
