@@ -4,11 +4,6 @@ summon "microbiota"
 summon 'time_travel'
 
 object Sauerkraut includes TimeTravel {
-
-  FERMENTING_STATE = 1
-  HUMAN_MICROBIOME_STATE = 2
-  UNKNOWN_STATE = 3
-
   method setup_qnl_language_bridge() {
     if fermenting? {
       send_cold_call_message(
@@ -41,14 +36,6 @@ object Sauerkraut includes TimeTravel {
     else_if unknown_state? {
       close_connections();
     }
-  }
-  
-  method fermenting? {
-    self.status == FERMENTING_STATE;
-  }
-
-  method ingested_and_living_in_human_microbiome? {
-    self.status == HUMAN_MICROBIOME_STATE;
   }
 }
 
