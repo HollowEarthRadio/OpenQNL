@@ -33,6 +33,7 @@ object Sauerkraut includes TimeTravel {
     }
     else_if ingested_and_living_in_human_microbiome? {
       open_neural_interface();
+      travel_time();
     }
     else_if refrigerating? {
       close_connections();
