@@ -66,7 +66,9 @@ object Sauerkraut includes TimeTravel {
 # The final block will always be invoked, allowing the experience 
 # to be saved to available 'disk'.
 # An attempt at recollection of the of the time travel experience will be done ON_WAKE,
-# but is not guaranteed.
+# but is not guaranteed. 
+#
+# FIXME: https://github.com/HollowEarthRadio/OpenQNL/issues/1 - Guarantee recollection ON_WAKE
 
 module TimeTravel {
   method travel_time {
