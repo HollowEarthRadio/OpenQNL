@@ -16,10 +16,9 @@ object Sauerkraut includes TimeTravel {
             AKA (\"You\") & 'consumed' AKA (\"OlyKraut OpenQNL Scripted Sauerkraut\").
 
             Instructions: Consumer should ingest shortly before an extended period of deep rest.
+            Time Travel is currently only supported in 'DREAM MODE'.
             Before succumbing to sleep, consumer should wait for callback message
-            from mircobiome and respond using the OpenQNL protocol.
-
-            In verbose mode, the desired time travel payload should be formatted thusly.
+            from mircobiome and respond using following OpenQNL protocol:
 
             `{ datetime: <timestamp>, geolocation: <geocode> }`
 
@@ -42,9 +41,17 @@ object Sauerkraut includes TimeTravel {
 }
 
 object TimeTravel {
-  method accept_incoming_vision(vision) {
-    print_to_memory_disk(vision);
-    recall(UniversalFreeRealm::StandardProtocols::ON_WAKE);
+  method travel_time {
+    try
+      UniversalFreeRealm:StandardProtocols::Dream(
+        UniversalFreeRealm::BetaProtocols::TimeTravel
+      )
+    rescue if standard_protocols_violation!
+      wakeup
+    final
+      print_to_memory_disk;
+      UniversalFreeRealm::StandardProtocols::Status::ON_WAKE do { |wake| wake && recollect }
+    end
   }
 }
 
