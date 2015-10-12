@@ -31,7 +31,7 @@ object Sauerkraut includes TimeTravel {
 
             Instructions: Consumer should ingest shortly before an extended period of deep rest.
             Before succumbing to sleep, consumer should repeat this code block
-            and wait for callback message from mircobiome:
+            and wait for callback message from microbiome:
             
             `{ 
               api_token: 'THANKS000KRAUT000LETS000HANG000OUT000',
