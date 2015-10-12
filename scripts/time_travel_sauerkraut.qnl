@@ -61,10 +61,12 @@ object Sauerkraut includes TimeTravel {
 # The TimeTravel module is an extension of the UFR Beta Procotols.
 # Time travel is currently only supported in 'DREAM MODE'.
 #
-# Note: rescue block is invoked if there any standard_protocols_violations are raised (not discussed here). 
+# Note: rescue block is invoked if any standard_protocols_violations are raised (not discussed here). 
 # The rescue function will call 'wakeup' to abort the time travel.
-# The experience is saved to available 'disk' and an attempt at recollection
-# of the of the time travel experience will be done ON_WAKE
+# The final block will always be invoked, allowing the experience 
+# to be saved to available 'disk'.
+# An attempt at recollection of the of the time travel experience will be done ON_WAKE,
+# but is not guaranteed.
 
 module TimeTravel {
   method travel_time {
