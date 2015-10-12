@@ -4,9 +4,10 @@ summon "microbiota"
 summon 'time_travel'
 
 object Sauerkraut includes TimeTravel {
-  method setup_qnl_language_bridge() {
+
+  method initialize() {
     if fermenting? {
-      send_cold_call_message(
+      send_message(
         ping: {
             "This message hereby certifies this jar to be in full compliance
             with the Universal Free Realm Standard Protocols and suitable for
@@ -33,7 +34,7 @@ object Sauerkraut includes TimeTravel {
     else_if ingested_and_living_in_human_microbiome? {
       open_neural_interface();
     }
-    else_if unknown_state? {
+    else_if refrigerating? {
       close_connections();
     }
   }
@@ -46,4 +47,4 @@ object TimeTravel {
   }
 }
 
-TimeTravelSauerkraut.initialize().setup_qnl_language_bridge();
+TimeTravelSauerkraut.initialize();
