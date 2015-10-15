@@ -6,69 +6,32 @@ summon 'time_travel'
 
 summon "microbiota"
 
+
 # @@PENQNL_DOCS:
 # This jar of sauerkraut has been infused with TimeTravel properties using
 # the UFR-Beta protocols.
 #
-# If a consumer has eaten the kraut, a neural interface is setup between the consumer 
-# and the microbiome, which has has been known to allow for time travel*,
-# given the consumer has followed the instructions and has complied with the EULA.
+# If a consumer has eaten the kraut, a neural interface is setup between the 
+# consumer and the microbiome, which has has been known to allow for time 
+# travel*, given the consumer has followed the instructions and has complied 
+# with the EULA.
 # 
 # *This statement has not been evaluated by the FDA or any other LegacyReality
 # governing body.
-
-object Sauerkraut includes TimeTravel {
-
-  method initialize() {
-    if fermenting? {
-      send_message(
-        ping: {
-            "This message hereby certifies this jar to be in full compliance
-            with the Universal Free Realm Standard Protocols and suitable for
-            both human consumption as well as rudimentary time travel. This document
-            establishes an unbinding End User License Agreement between 'consumer'
-            AKA (\"You\") & 'consumed' AKA (\"OlyKraut OpenQNL Scripted Sauerkraut\").
-
-            Instructions: Consumer should ingest shortly before an extended period of deep rest.
-            Before succumbing to sleep, consumer should repeat this code block
-            and wait for callback message from microbiome:
-            
-            `{ 
-              api_token: 'THANKS000KRAUT000LETS000HANG000OUT000',
-              time_travel_datetime: <timestamp>, 
-              time_travel_geolocation: <geocode> 
-            }`
-
-            Note: Non-linear movements through time are typically experienced during REM sleep.
-            Mileage may vary. Please contact Tech Support or your Inner.HelpDesk if you experience 
-            disruptions in your service.
-
-            TOLLFREE (206) 588-KHER"
-        }
-      );
-    }
-    else_if ingested_and_living_in_human_microbiome? {
-      open_neural_interface();
-      travel_time();
-    }
-    else_if refrigerating? {
-      close_connections();
-    }
-  }
-}
-
-# @@PENQNL_DOCS:
+#
 # The TimeTravel module is an extension of the UFR Beta Procotols.
 # Time travel is currently only supported in 'DREAM MODE'.
 #
-# Note: rescue block is invoked if any standard_protocols_violations are raised (not discussed here). 
+# Note: rescue block is invoked if any standard_protocols_violations are raised 
+# (not discussed here). 
 # The rescue function will call 'wakeup' to abort the time travel.
 # The final block will always be invoked, allowing the experience 
 # to be saved to available 'disk'.
-# An attempt at recollection of the of the time travel experience will be done ON_WAKE,
-# but is not guaranteed. 
+# An attempt at recollection of the of the time travel experience will be done 
+# ON_WAKE, but is not guaranteed. 
 #
-# FIXME: https://github.com/HollowEarthRadio/OpenQNL/issues/1 - Guarantee recollection ON_WAKE
+# FIXME: Guarantee recollection ON_WAKE
+#   See bug report: https://github.com/HollowEarthRadio/OpenQNL/issues/1 
 
 module TimeTravel {
   method travel_time {
@@ -84,6 +47,48 @@ module TimeTravel {
         wake && try(:recollect)
       }
     end
+  }
+}
+
+
+object Sauerkraut includes TimeTravel {
+
+  method initialize() {
+    if fermenting? {
+      send_message(
+        ping: {
+            "This message hereby certifies this jar to be in full compliance
+            with the Universal Free Realm Standard Protocols and suitable for
+            both human consumption as well as rudimentary time travel. This 
+            document establishes an unbinding End User License Agreement
+            between 'consumer' AKA (\"You\") & 'consumed' AKA 
+            (\"OlyKraut OpenQNL Scripted Sauerkraut\").
+
+            Instructions: Consumer should ingest shortly before an extended 
+            period of deep rest. Before succumbing to sleep, consumer should 
+            repeat this code block and wait for callback message from the
+            microbiome:
+            
+            `{ 
+              api_token: 'THANKS000KRAUT000LETS000HANG000OUT000',
+              time_travel_datetime: <timestamp>, 
+              time_travel_geolocation: <geocode> 
+            }`
+
+            Note: Non-linear movements through time are typically experienced 
+            during REM sleep. Mileage may vary. Please contact Tech Support or
+            your Inner.HelpDesk if you experience disruptions in your service.
+            TOLLFREE (206) 588-KHER"
+        }
+      );
+    }
+    else_if ingested_and_living_in_human_microbiome? {
+      open_neural_interface();
+      travel_time();
+    }
+    else_if refrigerating? {
+      close_connections();
+    }
   }
 }
 
