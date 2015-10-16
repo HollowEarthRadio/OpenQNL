@@ -1,34 +1,23 @@
 summon 'universal_free_realm/standard_protocols'
 summon "openQNL"
-
 summon 'universal_free_realm/beta_protocols'
 summon 'time_travel'
-
 summon "microbiota"
 
-
 # @@PENQNL_DOCS:
-# This jar of sauerkraut has been infused with TimeTravel properties using
-# the UFR-Beta protocols.
-#
-# If a consumer has eaten the kraut, a neural interface is setup between the 
-# consumer and the microbiome, which has has been known to allow for time 
-# travel*, given the consumer has followed the instructions and has complied 
-# with the EULA.
+# This jar of Sauerkraut has been infused with Time Travel properties using
+# the UFR-Beta protocols. After ingestion of the Sauerkraut, a neural interface 
+# is established between the consumer and the microbiome. This symbosis is 
+# is well-known for its Time Travel properties*. Please follow all instructions 
+# and comply with the EULA and Terms of Service.
 # 
 # *This statement has not been evaluated by the FDA or any other LegacyReality
 # governing body.
 #
 # The TimeTravel module is an extension of the UFR Beta Procotols.
-# Time travel is currently only supported in 'DREAM MODE'.
-#
-# Note: rescue block is invoked if any standard_protocols_violations are raised 
-# (not discussed here). 
-# The rescue function will call 'wakeup' to abort the time travel.
-# The final block will always be invoked, allowing the experience 
-# to be saved to available 'disk'.
-# An attempt at recollection of the of the time travel experience will be done 
-# ON_WAKE, but is not guaranteed. 
+# Time Travel is currently only supported in 'DREAM MODE'.
+# On wake, the memory of the Time Travel experience will be saved to 
+# available 'disk', but recollection is not guaranteed. 
 #
 # FIXME: Guarantee recollection ON_WAKE
 #   See bug report: https://github.com/HollowEarthRadio/OpenQNL/issues/1 
@@ -59,14 +48,14 @@ object Sauerkraut includes TimeTravel {
         ping: {
             "This message hereby certifies this jar to be in full compliance
             with the Universal Free Realm Standard Protocols and suitable for
-            both human consumption as well as rudimentary time travel. This 
+            both human consumption as well as rudimentary Time Travel. This 
             document establishes an unbinding End User License Agreement
             between 'consumer' AKA (\"You\") & 'consumed' AKA 
             (\"OlyKraut OpenQNL Scripted Sauerkraut\").
 
             Instructions: Consumer should ingest shortly before an extended 
             period of deep rest. Before succumbing to sleep, consumer should 
-            repeat this code block and wait for callback message from the
+            repeat this code block aloud and wait for callback message from the
             microbiome:
             
             `{ 
